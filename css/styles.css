@@ -237,21 +237,25 @@ img {
   max-width: 1440px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  /* padding-top: 188px;
+  padding-bottom: 188px; */
+  padding-top: 72px;
+  padding-bottom: 72px;
   margin: 0 auto;
 }
 
 .hero-tittle {
   text-align: center;
   color: #fff;
-  font-size: 56px;
+  /* font-size: 56px; */
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
+  line-height: 1.11;
   letter-spacing: 0.02em;
-  max-width: 496px;
+  max-width: 216px;
   margin: 0 auto;
-  margin-bottom: 48px;
+  /* margin-bottom: 48px; */
+  margin-bottom: 72px;
 }
 
 .hero-btn {
@@ -277,10 +281,55 @@ img {
   background-color: #404bbf;
 }
 
+@media screen and (min-width: 768px) {
+  .hero-tittle {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    max-width: 496px;
+    margin-bottom: 36px;
+  }
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office.jpg);
+    background-position: center;
+    max-width: 1440px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 118px;
+    padding-bottom: 118px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .hero-tittle {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    max-width: 496px;
+    margin-bottom: 48px;
+  }
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office.jpg);
+    background-position: center;
+    max-width: 1440px;
+    padding-top: 188px;
+    padding-bottom: 188px;
+  }
+}
 /* !!!!!!!!!!!!!!!!!  ADVENTAGES !!!!!!!!!!!!!!!!!!!!!! */
 .section-adventages {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .title-adventages {
@@ -297,6 +346,7 @@ img {
   align-items: center;
   background-color: #f4f4fd;
   margin-bottom: 8px;
+  display: none;
 }
 
 .svg-adventages-antenna {
@@ -316,8 +366,11 @@ img {
 }
 
 .list-adventages {
+  flex-direction: column;
+  /* display: flex; */
+  /* gap: 24px; */
+  gap: 72px;
   display: flex;
-  gap: 24px;
 }
 
 .item-list-adventages {
@@ -326,7 +379,7 @@ img {
 
 .title-item-adventages {
   color: #2e2f42;
-  font-size: 20px;
+  font-size: 36px;
   font-weight: 500;
   line-height: 1.2em;
   letter-spacing: 0.02em;
@@ -340,10 +393,49 @@ img {
   letter-spacing: 0.02em;
 }
 
+@media screen and (min-width: 768px) {
+  .list-adventages {
+    flex-wrap: wrap;
+    gap: 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-item-adventages {
+    padding-bottom: 72px;
+  }
+
+  .title-item-adventages {
+  }
+  .svg-adventages {
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .list-adventages {
+    display: flex;
+    gap: 24px;
+  }
+  .svg-adventages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-item-adventages {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.02em;
+  }
+}
+
 /* !!!!!!!!!!!!!!!! SECTION TEAM !!!!!!!!!!!!!!!!!!!! */
 .section-team {
   background-color: #f4f4fd;
-  padding: 120px 0;
+  /* padding: 120px 0; */
+  padding: 96px 0;
 }
 
 .title-team {
@@ -423,13 +515,17 @@ img {
 
 .team-container {
   padding: 32px 0;
+  width: 264px;
 }
 
 .img-item {
   margin: 0 auto;
   display: flex;
-  gap: 24px;
-  padding-bottom: 120px;
+  gap: 72px;
+  /* gap: 24px; */
+  /* padding-bottom: 120px; */
+  padding-bottom: 96px;
+  flex-direction: column;
 }
 
 .img-list {
@@ -439,6 +535,17 @@ img {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  width: 264px;
+}
+
+@media screen and (min-width: 768px) {
+  .section-team {
+  }
+
+  .img-item {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 /* !!!!!!!!!!!!!!! PORTFOLIO !!!!!!!!!!!!!!!!!!!! */
