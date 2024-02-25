@@ -232,9 +232,10 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/people-office-mobile.jpg);
   background-position: center;
-  max-width: 1440px;
+  /* max-width: 1440px; */
+  max-width: 320px;
   background-repeat: no-repeat;
   background-size: cover;
   /* padding-top: 188px;
@@ -281,6 +282,22 @@ img {
   background-color: #404bbf;
 }
 
+/* !!!!!!!!!!!!!!!PHONE!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+@media screen and (min-resolution: 192dpi) and (min-width: 320px),
+  screen and (min-resolution: 2dppx) and (min-width: 320px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 320px) {
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/people-office-mobile@2x.jpg');
+    padding: 112px 0;
+  }
+}
+/* !!!!!!!!!!!!!!!PHONE!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 @media screen and (min-width: 768px) {
   .hero-tittle {
     font-size: 56px;
@@ -302,6 +319,31 @@ img {
     background-size: cover;
     padding-top: 118px;
     padding-bottom: 118px;
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/people-office-tablet@2x.jpg');
+    padding: 112px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/people-office-tablet.jpg');
+    padding: 112px 0;
+    max-width: 768px;
   }
 }
 
@@ -389,6 +431,7 @@ img {
 .text-item-adventages {
   color: #434455;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
@@ -396,14 +439,20 @@ img {
 @media screen and (min-width: 768px) {
   .list-adventages {
     flex-wrap: wrap;
-    gap: 24px;
+    /* gap: 24px; */
+    row-gap: 72px;
+    column-gap: 24px;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
   }
 
+  .item-list-adventages {
+    width: calc((100% - 24px) / 2);
+  }
+
   .text-item-adventages {
-    padding-bottom: 72px;
+    /* padding-bottom: 72px; */
+    font-weight: 500;
   }
 
   .title-item-adventages {
@@ -425,9 +474,12 @@ img {
 
   .title-item-adventages {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.2em;
     letter-spacing: 0.02em;
+  }
+  .item-list-adventages {
+    width: calc((100% - 3 * 24px) / 4);
   }
 }
 
@@ -526,6 +578,7 @@ img {
   /* padding-bottom: 120px; */
   padding-bottom: 96px;
   flex-direction: column;
+  align-items: center;
 }
 
 .img-list {
@@ -545,14 +598,30 @@ img {
   .img-item {
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 72px 24px;
+  }
+  .section-team .container {
+    max-width: 584px;
+  }
+
+  .title-team {
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .section-team .container {
+    max-width: 1158px;
+  }
+  .team-li-class {
   }
 }
 
 /* !!!!!!!!!!!!!!! PORTFOLIO !!!!!!!!!!!!!!!!!!!! */
-
 .section-portfolio {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  /* padding-top: 120px;
+  padding-bottom: 120px; */
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .title-portfolio {
@@ -568,9 +637,11 @@ img {
 
 .list-portfolio {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap;
   column-gap: 24px;
-  row-gap: 48px;
+  row-gap: 48px; */
+  flex-direction: column;
+  gap: 72px;
 }
 
 .item-list-portfolio {
@@ -628,6 +699,35 @@ img {
   letter-spacing: 0.02em;
 }
 
+@media screen and (min-width: 768px) {
+  .list-portfolio {
+    gap: 72px 24px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .item-list-portfolio {
+  }
+  .portfolio-div-container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 72px 24px;
+  }
+
+  .section-portfolio .container {
+    max-width: 584px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .list-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
+    flex-direction: row;
+  }
+}
 /* !!!!!!!!!!! FOOTER !!!!!!!!!!!!!!!  */
 
 .footer {
