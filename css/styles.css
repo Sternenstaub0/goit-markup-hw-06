@@ -828,7 +828,7 @@ img {
 
 .footer-style {
   display: flex;
-  align-items: baseline;
+  /* align-items: baseline; */
   flex-direction: column;
 }
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MODAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
