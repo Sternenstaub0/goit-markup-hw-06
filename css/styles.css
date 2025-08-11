@@ -73,7 +73,47 @@ address {
 .header-container {
   display: block;
 }
+.page-header {
+  border-bottom: 1px solid #e7e9fc;
+  box-shadow: 2px 1px rgba(46, 47, 66, 0.08),
+              0px 1px 1px rgba(46, 47, 66, 0.16),
+              0px 1px 6px rgba(46, 47, 66, 0.08);
+  animation: headerFadeIn 1s ease-out;
+}
 
+@keyframes headerFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header-logo {
+  position: relative;
+  display: inline-block;
+  padding: 24px 0;
+  color: #4d5ae5;
+  font-size: 18px;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.54px;
+}
+
+.header-logo::after {
+  content: "";
+  position: absolute;
+  top: -6px; left: -10px; right: -10px; bottom: -6px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #4d5ae5, #404bbf, #4d5ae5);
+  filter: blur(6px);
+  opacity: 0.6;
+  z-index: -1;
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
 .header-logo {
   display: block;
   padding: 24px 0;
@@ -101,7 +141,38 @@ address {
 .header-logo span {
   color: #2e2f42;
 }
+.navigate-list-link,
+.contacts-list-link {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
 
+.navigate-list-link::after,
+.contacts-list-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #4d5ae5, #404bbf, #4d5ae5);
+  transition: width 0.4s ease, left 0.4s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #4d5ae5;
+}
+
+.navigate-list-link:hover,
+.contacts-list-link:hover {
+  color: #4d5ae5;
+  text-shadow: 0 0 8px rgba(77, 90, 229, 0.8);
+}
+
+.navigate-list-link:hover::after,
+.contacts-list-link:hover::after {
+  width: 100%;
+  left: 0;
+}
 .navigate {
   display: flex;
   justify-content: space-between;
@@ -358,7 +429,39 @@ address {
   /* width: calc((100% - 72px) / 4); */
   width: 100%;
 }
+.svg-advantages-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 112px;
+  background-color: #f4f4fd;
+  border: 1px #8e8f99 solid;
+  border-radius: 4px;
+  padding: 24px 100px;
+  margin-bottom: 8px;
 
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+@media screen and (min-width: 1158px) {
+  .svg-advantages-container {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Небольшой эффект при наведении */
+.advantages-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantages-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
 .svg-advantages-container {
   display: none;
   justify-content: center;
@@ -427,11 +530,14 @@ address {
 }
 
 /* ============================== SECTION-TEAM ============================== */
-
-.team-section {
-  background-color: #f4f4fd;
+.team-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.team-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(46, 47, 66, 0.12);
+}
 .team-title {
   font-size: 36px;
   line-height: 1.11;
@@ -838,7 +944,20 @@ address {
 }
 
 /* ============================== MODAL ============================== */
+.open-modal-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #404bbf;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.25s ease;
+}
 
+.open-modal-btn:hover {
+  background-color: #2e2f66;
+}
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -853,6 +972,17 @@ address {
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal {
@@ -871,6 +1001,8 @@ address {
   border-radius: 4px;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+ 
 }
 
 @media screen and (min-width: 768px) {
